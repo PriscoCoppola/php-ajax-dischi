@@ -20,6 +20,19 @@
             </header>
             <!-- MAIN -->
             <main>
+                <div class="select">
+                    <label for="artist-select">Filter by genre</label>
+                    <select
+                        name="artist"
+                        id="artist-select"
+                        v-model="selected"
+                        @change="getAlbumArtist"
+                    >
+                        <option v-for="artist in artists" :value="artist">
+                            {{ artist }}
+                        </option>
+                    </select>
+                </div>
                 <div class="container">
                     <div class="box" v-for="disc in discs">
                         <img :src="disc.poster" alt="Disc" />
